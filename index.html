@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Time!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid bg-dark text-light">
+        <div class="container">
+            <h1 class="display-4">Train Time!</h1>
+            <p class="lead">Check the listing for your train and plan your departure accordingly.</p>
+        </div>
+    </div>
+    <div class="container" id="data-display">
+        <div class="row justify-content-between bg-dark text-light" id="headers">
+            <div class="col-sm-2">
+                <h5 class="text-center">Train Name</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5 class="text-center">Destination</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5 class="text-center">Frequency (min)</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5 class="text-center">Next Arrival</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5 class="text-center">Minutes Away</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group">
+                        <label for="formTrainName">Train Name</label>
+                        <input type="text" class="form-control" id="input-trainName" placeholder="Text">
+                    </div>
+                    <div class="form-group">
+                        <label for="formDestination">Destination</label>
+                        <input type="text" class="form-control" id="input-destination" placeholder="Text">
+                    </div>
+                    <div class="form-group">
+                        <label for="formFirstTrain">First Train Time (24hr)</label>
+                        <input type="text" class="form-control" id="input-firstTrain" placeholder="Time">
+                    </div>
+                    <div class="form-group">
+                        <label for="formFrequency">Frequency (min)</label>
+                        <input type="text" class="form-control" id="input-frequency" placeholder="Number">
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

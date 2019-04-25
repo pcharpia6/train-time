@@ -1,0 +1,20 @@
+.jumbotron {
+    padding: 10px;
+}
+
+#headers {
+    height: 3rem;
+}
+
+label {
+    font-weight: bolder;
+}
+
+#data-display {
+    border: black solid 2px;
+    border-radius: 10px;
+}
+
+h5 {
+    padding: 10px 0px;
+}
