@@ -18,29 +18,46 @@
             <p class="lead">Check the listing for your train and plan your departure accordingly.</p>
         </div>
     </div>
-    <div class="container" id="data-display">
-        <div class="row justify-content-between bg-dark text-light" id="headers">
-            <div class="col-sm-2">
-                <h5 class="text-center">Train Name</h5>
-            </div>
-            <div class="col-sm-2">
-                <h5 class="text-center">Destination</h5>
-            </div>
-            <div class="col-sm-2">
-                <h5 class="text-center">Frequency (min)</h5>
-            </div>
-            <div class="col-sm-2">
-                <h5 class="text-center">Next Arrival</h5>
-            </div>
-            <div class="col-sm-2">
-                <h5 class="text-center">Minutes Away</h5>
-            </div>
-        </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col" class="text-center">Train Name</th>
+                <th scope="col" class="text-center">Destination</th>
+                <th scope="col" class="text-center">Frequency (min)</th>
+                <th scope="col" class="text-center">Next Arrival</th>
+                <th scope="col" class="text-center">Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>
     </div>
+    
+    <div class="container" id="header-display">
+            <div class="row justify-content-between bg-dark text-light" id="headers">
+                <div class="col-sm-2">
+                    <h5 class="text-center">Train Name</h5>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-center">Destination</h5>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-center">Frequency (min)</h5>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-center">Next Arrival</h5>
+                </div>
+                <div class="col-sm-2">
+                    <h5 class="text-center">Minutes Away</h5>
+                </div>
+            </div>
+    </div>
+    <div class="container" id="data-display"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form>
+                <form id="train-form">
                     <div class="form-group">
                         <label for="formTrainName">Train Name</label>
                         <input type="text" class="form-control" id="input-trainName" placeholder="Text">
@@ -57,10 +74,12 @@
                         <label for="formFrequency">Frequency (min)</label>
                         <input type="text" class="form-control" id="input-frequency" placeholder="Number">
                     </div>
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    
                 </form>
+                <button class="btn btn-dark" id="add-train">Submit</button>
             </div>
         </div>
     </div>
 </body>
+<script src="assets/javascript/app.js"></script>
 </html>
