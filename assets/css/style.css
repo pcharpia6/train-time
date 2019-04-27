@@ -13,8 +13,13 @@ label {
 #data-display {
     border: black solid 2px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 h5 {
     padding: 10px 0px;
+}
+
+#train-form {
+    font-size: 70%;
 }

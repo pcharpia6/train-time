@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid bg-dark text-light">
@@ -19,7 +20,7 @@
         </div>
     </div>
     <div class="container">
-        <table class="table">
+        <table class="table" id="display-table">
             <thead>
                 <tr>
                 <th scope="col" class="text-center">Train Name</th>
@@ -31,48 +32,28 @@
             </thead>
             <tbody>
             </tbody>
-            </table>
+        </table>
     </div>
-    
-    <div class="container" id="header-display">
-            <div class="row justify-content-between bg-dark text-light" id="headers">
-                <div class="col-sm-2">
-                    <h5 class="text-center">Train Name</h5>
-                </div>
-                <div class="col-sm-2">
-                    <h5 class="text-center">Destination</h5>
-                </div>
-                <div class="col-sm-2">
-                    <h5 class="text-center">Frequency (min)</h5>
-                </div>
-                <div class="col-sm-2">
-                    <h5 class="text-center">Next Arrival</h5>
-                </div>
-                <div class="col-sm-2">
-                    <h5 class="text-center">Minutes Away</h5>
-                </div>
-            </div>
-    </div>
-    <div class="container" id="data-display"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <form id="train-form">
+                    <h3>Add a train!</h3>
                     <div class="form-group">
                         <label for="formTrainName">Train Name</label>
-                        <input type="text" class="form-control" id="input-trainName" placeholder="Text">
+                        <input required type="text" class="form-control" id="input-trainName" placeholder="Text">
                     </div>
                     <div class="form-group">
                         <label for="formDestination">Destination</label>
-                        <input type="text" class="form-control" id="input-destination" placeholder="Text">
+                        <input required type="text" class="form-control" id="input-destination" placeholder="Text">
                     </div>
                     <div class="form-group">
-                        <label for="formFirstTrain">First Train Time (24hr)</label>
-                        <input type="text" class="form-control" id="input-firstTrain" placeholder="Time">
+                        <label for="formFirstTrain">First Train Time</label>
+                        <input required type="time" class="form-control" id="input-firstTrain" placeholder="Time">
                     </div>
                     <div class="form-group">
-                        <label for="formFrequency">Frequency (min)</label>
-                        <input type="text" class="form-control" id="input-frequency" placeholder="Number">
+                        <label for="formFrequency">Frequency (Min)</label>
+                        <input required type="number" class="form-control" id="input-frequency" placeholder="Number">
                     </div>
                     
                 </form>
