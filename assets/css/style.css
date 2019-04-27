@@ -22,4 +22,9 @@ h5 {
 
 #train-form {
     font-size: 70%;
+    margin-bottom: 15px;
+}
+
+#add-train {
+    margin-bottom: 15px;
 }

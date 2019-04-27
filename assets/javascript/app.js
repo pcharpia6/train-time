@@ -38,35 +38,28 @@ $("#add-train").on("click", function(event) {
     $("#input-firstTrain").val("");
     $("#input-frequency").val("");
 });
-var format = 'hh:mm'
+var format = 'hh:mm a'
 database.ref().on("child_added", function(snapshot) {
     // Grab database values
     var name = snapshot.val().newTrain.name;
     var dest = snapshot.val().newTrain.dest;
-    var next = snapshot.val().newTrain.first;
+    var next = moment(snapshot.val().newTrain.first, format);
     var freq = snapshot.val().newTrain.freq;
     // Format the database value for time
-    displayNext = moment(next, format);
+    var displayNext = moment(next, format);
     // Difference between the times
     var diffTime = moment().diff(moment(displayNext), "minutes");
 
     // Time apart (remainder)
     var tRemainder = diffTime % freq;
 
-
-    // is the station running?
-
-    var time = moment();
-    var beforeTime = moment('22:00', format);
-    var afterTime = moment('04:00', format);
-
-if (time.isBetween(beforeTime, afterTime)) {
     // Minute Until Train
     displayMinTo = freq - tRemainder;
 
     // Next Train
     displayNext = moment(moment().add(displayMinTo, "minutes")).format(format);
-    // create the new table row and add text
+    console.log(displayNext);
+    
     var newRow = $("<tr>").append(
         
         $("<td class='text-center'>").text(name), //name
@@ -75,26 +68,6 @@ if (time.isBetween(beforeTime, afterTime)) {
         $("<td class='text-center'>").text(displayNext), // time of next arrival
         $("<td class='text-center'>").text(displayMinTo) // minutes until time of next arrival
       );
-
-} else {
-    // Time apart (remainder)
-    var tRemainder = diffTime % freq;
-    // Minute Until Train
-    displayMinTo = freq - tRemainder;
-
-    // Next Train
-    displayNext = moment(moment().add(displayMinTo, "minutes")).format(format);
-    // create the new table row and add text
-    var newRow = $("<tr>").append(
-        
-        $("<td class='text-center'>").text(name), //name
-        $("<td class='text-center'>").text(dest), // destination
-        $("<td class='text-center'>").text(freq), // frequency
-        $("<td class='text-center'>").text(snapshot.val().newTrain.first), // time of next arrival
-        $("<td class='text-center'>").text(displayMinTo) // minutes until time of next arrival
-      );
-
-}
 
         // add new table row to the html
     $("#display-table > tbody").append(newRow);
